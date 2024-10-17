@@ -64,8 +64,7 @@ namespace AuraDev
             DrawDefaultInspector();
             var localTarget = (RichStringSettings)target;
 
-            EditorGUILayout.HelpBox("Make sure to hit the \"Save\" button after you've changed the properties.", MessageType.Info);
-            if (GUILayout.Button("Save")) localTarget.Save();
+            //
         }
     }
 #endif 
