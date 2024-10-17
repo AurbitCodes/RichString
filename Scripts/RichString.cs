@@ -44,9 +44,9 @@ namespace AuraDev
         private bool _isInitialized;
 
         /// <summary>
-        /// Initializes the parsing process with the current expression. This should be called again if the expression changes.
+        /// Initializes the parser with the current expression. Invoke again if the expression is updated.
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="obj">The target object whose properties will be accessed for referencing.</param>
         public void Initialize(object obj)
         {
             _targetObject = obj;
@@ -56,11 +56,12 @@ namespace AuraDev
             SetupPropertyReferences();
         }
         /// <summary>
-        /// Gets the final parsed string.
+        /// Parses the expression to produce the final output string with evaluated references and rich text formatting.
+        /// Replaces all property references with their corresponding values and applies any specified rich text styles.
         /// </summary>
-        /// <param name="alternate">Specifies whether the RichString utilizes the Normal Form or Alternate Form
-        /// defined in the classes that have implemented IRichStringCustomFormat interface.</param>
-        /// <returns></returns>
+        /// <param name="alternate">Determines whether to use the Normal or Alternate format, 
+        /// as specified by classes implementing the IRichStringCustomFormat interface.</param>
+        /// <returns>The fully parsed string, with all references evaluated and rich text formatting applied.</returns>
         public string GetParsedString(bool alternate = false)
         {
             string result = Expression;
@@ -75,7 +76,17 @@ namespace AuraDev
 
             return result;
         }
-
+        public static void HandleError(string message)
+        {
+            if (sharedSettings.throwExepction)
+            {
+                throw new Exception(message);
+            }
+            else
+            {
+                Debug.LogWarning(message);
+            }
+        }
         #region Private Methods
         private void SetupPropertyReferences()
         {
@@ -117,7 +128,8 @@ namespace AuraDev
             string[] parts = reference.Split(sharedSettings.enumerableIndex);
             if (!int.TryParse(parts[1], out result.Index))
             {
-                throw new Exception($"Index is not an integer in {reference} or Enumerable format (EnumerableName->Index) is not correct.");
+                HandleError($"Index is not an integer in {reference} or Enumerable format (EnumerableName->Index) is not correct."); 
+                result.Index = -1;
             }
             result.MemberName = parts[0];
 
@@ -155,7 +167,9 @@ namespace AuraDev
         {
             if (!text.Contains(sharedSettings.richText))
             {
-                throw new Exception($"There is no rich text modification specifier in {text}");
+                HandleError($"There is no rich text modification specifier in {text}");
+                textToBeModified = string.Empty;
+                return null;
             }
 
             string[] splitedText = text.Split(sharedSettings.richText);
@@ -175,7 +189,7 @@ namespace AuraDev
         {
             MemberInfo info = targetType.GetMember(reference).FirstOrDefault();
 
-            if (info == null) throw new Exception($"There is no member named {reference} in {targetType}");
+            if (info == null) HandleError($"There is no member named {reference} in {targetType}");
 
             if (IsReferenceEnumerating(reference))
             {

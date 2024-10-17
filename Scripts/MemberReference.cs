@@ -22,7 +22,13 @@ namespace AuraDev
         }
         public string GetStringValue(bool alternate = false)
         {
-            var value = GetValue();
+#nullable enable
+            object? value = GetValue();
+            if (value == null)
+            {
+                return string.Empty;
+            }
+#nullable disable
             if (value is IRichStringCustomFormat)
             {
                 var richFormat = value as IRichStringCustomFormat;
@@ -44,7 +50,8 @@ namespace AuraDev
 
                 if (isEnumerable && !(value is IEnumerable))
                 {
-                    throw new Exception($"Member {member.Name} is not an IEnumerable, but you're trying to use it as an IEnumerable");
+                    RichString.HandleError($"Member {member.Name} is not an IEnumerable, but you're trying to use it as an IEnumerable");
+                    return null;
                 }
             }
             else if (member is PropertyInfo)
@@ -53,10 +60,15 @@ namespace AuraDev
 
                 if (isEnumerable && !(value is IEnumerable))
                 {
-                    throw new Exception($"Member {member.Name} is not an IEnumerable, but you're trying to use it as an IEnumerable");
+                    RichString.HandleError($"Member {member.Name} is not an IEnumerable, but you're trying to use it as an IEnumerable");
+                    return null;
                 }
             }
-            else throw new Exception($"Member {member.Name} is neither a Field or a Property. Member Type: {member.MemberType}");
+            else
+            {
+                RichString.HandleError($"Member {member.Name} is neither a Field or a Property. Member Type: {member.MemberType}");
+                return null;
+            }
 
             enumerateCheckedValue = isEnumerable ? GetEnumerableValue(value as IEnumerable, index) : value;
 

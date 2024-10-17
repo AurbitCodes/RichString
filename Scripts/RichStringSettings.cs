@@ -19,6 +19,9 @@ namespace AuraDev
         [SerializeField] string _bold = "b";
         [SerializeField] string _italic = "i";
         [SerializeField] List<AKeyValuePair<string, Color>> _colorKeys = new();
+        [field: Space]
+        [field: SerializeField] public ErrorHandlingMode errorHandlingMode { get; private set; } = ErrorHandlingMode.Error;
+        public bool throwExepction => errorHandlingMode == ErrorHandlingMode.Error;
 
         public List<AKeyValuePair<string, RichString.RichTextDelegate>> actionTable { get; private set; } = new();
 
@@ -38,6 +41,12 @@ namespace AuraDev
             {
                 actionTable.Add(new AKeyValuePair<string, RichString.RichTextDelegate>(colorKey.Key, x => x.Colorize(colorKey.Value)));
             }
+        }
+
+        public enum ErrorHandlingMode
+        {
+            Error,
+            Warning
         }
     }
     // A simple and serializable KeyValuePair
