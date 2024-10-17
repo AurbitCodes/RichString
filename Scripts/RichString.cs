@@ -234,7 +234,17 @@ namespace AuraDev
 
                 foreach (string actionKey in actionKeys)
                 {
-                    toBeRichText = sharedSettings.actionTable.Find(x => x.Key == actionKey).Value(toBeRichText);
+#nullable enable
+                    AKeyValuePair<string, RichTextDelegate>? action = sharedSettings.actionTable.Find(x => x.Key == actionKey);
+                    if (action == null)
+                    {
+                        HandleError($"There is no rich text specifier or color key named {actionKey} in {expression}");
+                    }
+                    else
+                    {
+                        toBeRichText = action.Value(toBeRichText);
+                    }
+#nullable disable
                 }
 
                 richText = richText.Replace(originalForm, toBeRichText);
