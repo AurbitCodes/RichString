@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0a8e71a03c14b438a65c88974143f5, type: 3}
+  m_Name: RichString Settings
+  m_EditorClassIdentifier: 
+  <enumerableIndex>k__BackingField: ->
+  <propertyRefernce>k__BackingField: .
+  <richText>k__BackingField: ':'
+  _bold: b
+  _italic: i
+  _colorKeys:
+  - <Key>k__BackingField: warn
+    <Value>k__BackingField: {r: 0.9528302, g: 0.83457303, b: 0.22921856, a: 1}
+  - <Key>k__BackingField: error
+    <Value>k__BackingField: {r: 0.7830189, g: 0.23268957, b: 0.23268957, a: 1}
