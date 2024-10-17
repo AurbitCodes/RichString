@@ -238,7 +238,7 @@ namespace AuraDev
                     AKeyValuePair<string, RichTextDelegate>? action = sharedSettings.actionTable.Find(x => x.Key == actionKey);
                     if (action == null)
                     {
-                        HandleError($"There is no rich text specifier or color key named {actionKey} in {expression}");
+                        HandleError($"There is no rich text specifier or color key named {actionKey} in {text}");
                     }
                     else
                     {

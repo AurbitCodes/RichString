@@ -18,7 +18,10 @@ MonoBehaviour:
   _bold: b
   _italic: i
   _colorKeys:
-  - <Key>k__BackingField: warn
+  - <Key>k__BackingField: notice
     <Value>k__BackingField: {r: 0.9528302, g: 0.83457303, b: 0.22921856, a: 1}
-  - <Key>k__BackingField: error
-    <Value>k__BackingField: {r: 0.7830189, g: 0.23268957, b: 0.23268957, a: 1}
+  - <Key>k__BackingField: green
+    <Value>k__BackingField: {r: 0.045033824, g: 0.8679245, b: 0.22577491, a: 1}
+  - <Key>k__BackingField: blue
+    <Value>k__BackingField: {r: 0.11124954, g: 0.36136588, b: 0.9433962, a: 1}
+  <errorHandlingMode>k__BackingField: 1
