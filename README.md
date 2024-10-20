@@ -32,7 +32,8 @@ public class Weapon
 }
 ```
 #### Define the `WeaponDescription` Class
-  `RichString` must be Initialized with the `object` you want to reference its properties (in this case `this`). Initialization must be done in the `Start()` or `Awake()` Method (in a `MonoBehavior`) or anywhere **before invoking `GetParsedString()`**. 
+ Here's a basic `WeaponDescription` class with a `RichString` field, a `Weapon` instance and a list of `Weapon`.
+ `RichString` must be Initialized with the `object` that its properties is going to be referenced (in this case `this`). Initialization must be done in the `Start()` or `Awake()` Method (in a `MonoBehavior`) or anywhere **before invoking `GetParsedString()`**. 
 ```csharp
 public class WeaponDescription : MonoBehavior
 {
@@ -54,3 +55,7 @@ public class WeaponDescription : MonoBehavior
 ```
 #### Write Description
 ![](Docs/Images/basic-expression.png)
+
+Now the text can be written using certain rules that are mentioned later in the document.
+##### Result (in a Text Component)
+
