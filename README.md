@@ -83,8 +83,12 @@ public class Inventory : MonoBehavior
 
  - **Element of an `IEnumerable`**
 
-   To access an element from an IEnumerable, use the arrow `->` to separate the property name from the desired index. You can also nest these references to access properties of objects contained within collections:
+   To access an element from an IEnumerable, use the arrow `->` to separate the property name from the desired index.
+
+   > You can also nest these references to access properties of objects contained within collections:
 
    ```
    Your First Weapon deals {weapons->0.damage}
    ```
+
+## Rich Text
