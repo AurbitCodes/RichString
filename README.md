@@ -1,3 +1,4 @@
+![RichString](Docs/Images/RichStringBanner.png)
 # RichString
  A dynamic, runtime string interpolation tool for Unity, supporting custom formatting and expressions.
  ## Features:
@@ -30,13 +31,16 @@ public class Weapon
     [field: SerializeField] public int FireRate { get; set; }
 }
 ```
-#### Define the `WeaponDescription` Class and reference `Weapon`
-  Initialize the RichString with the `object` you want to reference its properties in the `Start()` Method or anywhere **before invoking `GetParsedStrig()`**. 
+#### Define the `WeaponDescription` Class
+ Here's a basic `WeaponDescription` class with a `RichString` field, a `Weapon` instance and a list of `Weapon`.
+ `RichString` must be Initialized with the `object` that its properties is going to be referenced (in this case `this`). Initialization must be done in the `Start()` or `Awake()` Method (in a `MonoBehavior`) or anywhere **before invoking `GetParsedString()`**. 
 ```csharp
 public class WeaponDescription : MonoBehavior
 {
     [SerializeField] RichString _description;
-    [SerializeField] Weapon _mainWeapon;
+
+    [field: SerializeField] public List<DemoWeapon> weapons { get; private set; }
+    [field: SerializeField, RichReference] public DemoWeapon mainWeapon { get; private set; }
 
     public void Start()
     {
@@ -50,4 +54,8 @@ public class WeaponDescription : MonoBehavior
 }
 ```
 #### Write Description
+![](Docs/Images/basic-expression.png)
+
+Now the text can be written using certain rules that are mentioned later in the document.
+##### Result (in a Text Component)
 
