@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &139571795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -606,13 +606,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textComp: {fileID: 1401585581}
   <description>k__BackingField:
-    <Expression>k__BackingField: Your Main Weapon has {mainWeapon.damage} damage.
+    <Expression>k__BackingField: Your Main Weapon has [{mainWeapon.damage}:b] damage.
   <weapons>k__BackingField:
-  - <damage>k__BackingField: 57
+  - <damage>k__BackingField: 25
     <fireRate>k__BackingField: 10
-  mainWeapon:
-    <damage>k__BackingField: 65
-    <fireRate>k__BackingField: 12
+  <mainWeapon>k__BackingField:
+    <damage>k__BackingField: 15
+    <fireRate>k__BackingField: 15
 --- !u!4 &1369614523
 Transform:
   m_ObjectHideFlags: 0
