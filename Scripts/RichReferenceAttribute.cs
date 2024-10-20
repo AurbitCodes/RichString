@@ -25,7 +25,7 @@ namespace AuraDev
         /// allowing easy copying of the reference.</param>
         /// <param name="showRichReferenceForm">Determines whether a reference format for RichString expressions is displayed in the Inspector,
         /// helping users understand how to reference the property in RichString syntax.</param>
-        public RichReferenceAttribute(bool showCopyButton = true, bool showRichReferenceForm = true)
+        public RichReferenceAttribute(bool showCopyButton = true, bool showRichReferenceForm = false)
         {
             this.showCopyButton = showCopyButton;
             this.showRichReferenceForm = showRichReferenceForm;

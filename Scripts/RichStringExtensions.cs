@@ -17,6 +17,14 @@ namespace AuraDev
         {
             return $"<i>{value}</i>";
         }
+        public static string Strikethrough(this string value)
+        {
+            return $"<s>{value}</s>";
+        }
+        public static string Underline(this string value)
+        {
+            return $"<u>{value}</u>";
+        }
         /// <summary>
         /// Returns the colorized text.
         /// </summary>

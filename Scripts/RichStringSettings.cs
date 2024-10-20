@@ -18,6 +18,8 @@ namespace AuraDev
         [Header("Rich Text Specifiers")]
         [SerializeField] string _bold = "b";
         [SerializeField] string _italic = "i";
+        [SerializeField] string _underline = "u";
+        [SerializeField] string _strikethrough = "s";
         [SerializeField] List<AKeyValuePair<string, Color>> _colorKeys = new();
         [field: Space]
         [field: SerializeField] public ErrorHandlingMode errorHandlingMode { get; private set; } = ErrorHandlingMode.Error;
@@ -36,6 +38,8 @@ namespace AuraDev
 
             actionTable.Add(new AKeyValuePair<string, RichString.RichTextDelegate>(_bold, x => x.Bold()));
             actionTable.Add(new AKeyValuePair<string, RichString.RichTextDelegate>(_italic, x => x.Italic()));
+            actionTable.Add(new AKeyValuePair<string, RichString.RichTextDelegate>(_underline, x => x.Underline()));
+            actionTable.Add(new AKeyValuePair<string, RichString.RichTextDelegate>(_strikethrough, x => x.Strikethrough()));
 
             foreach (var colorKey in _colorKeys)
             {
