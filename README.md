@@ -92,3 +92,32 @@ public class Inventory : MonoBehavior
    ```
 
 ## Rich Text
+
+ - **Formatting**
+   
+   To apply formatting to your text, place a colon `:` between your text and the formatting specifier within square brackets `[]`. The default formatting specifiers are as follows:
+
+   Bold: `b`
+
+   Italic: `i`
+
+   Strikethrough: `s`
+
+   Underline: `u`
+
+   ```
+   I am [Bold:b].
+   ```
+   
+   You can also nest these formatting specifiers to create combinations:
+
+   ```
+   I am [Bold and Italic!:b:i].
+   ```
+   You can also reference a property as your text:
+
+   ```
+   Your Main Weapon deals [{mainWeapon.damage}:b:u].
+   ```
+
+ - **Colorizing**
