@@ -72,7 +72,7 @@ public class Inventory : MonoBehavior
    A property can be referenced by placing the property name within curly braces `{}`.
    
    ```
-   Your Inventory has {MaxSlots} max slots.  
+   Your Inventory has {MaxSlots} slots.  
    ```
 
  - **Property in an Instance**
