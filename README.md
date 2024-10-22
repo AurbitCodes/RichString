@@ -191,9 +191,9 @@ text = text.Bold().Colorize(Color.green);
 # RichReference Attribute 
  When referencing a property, the property name used in code should be utilized (rather than Unity's display name in the inspector), and `RichReference` attribute facilitates easier access to it.
 
- The `RichReference` attribute contains two properties: `showCopyButton` and `richReferenceDraw`. When `showCopyButton` is enabled, a copy button is drawn that will copy the main property name (rather than the Unity display name) to the clipboard.
+ The `RichReference` attribute contains two properties: `showCopyButton` and `richReferenceDraw`. When `showCopyButton` is enabled, a copy button is drawn that will copy the main property name (rather than the Unity's display name) to the clipboard.
 
- The `richReferenceDraw` property is an enumeration of type `RichReferenceDrawType`, which includes the following options:
+ The `richReferenceDraw` property is an enum of type `RichReferenceDrawType`, which includes the following options:
 
  - **DontDraw**: No elements are drawn.
  - **Replace**: The Unity display name is replaced with the main property name.
