@@ -25,10 +25,10 @@ namespace AuraDev
         /// allowing easy copying of the reference.</param>
         /// <param name="showRichReferenceForm">Determines whether a reference format for RichString expressions is displayed in the Inspector,
         /// helping users understand how to reference the property in RichString syntax.</param>
-        public RichReferenceAttribute(bool showCopyButton = true, bool showRichReferenceForm = false)
+        public RichReferenceAttribute(bool showCopyButton = true, RichReferenceDrawType richReferenceDraw = RichReferenceDrawType.DontDraw)
         {
             this.showCopyButton = showCopyButton;
-            this.showRichReferenceForm = showRichReferenceForm;
+            this.richReferenceDraw = richReferenceDraw;
         }
 
         /// <summary>
@@ -41,7 +41,14 @@ namespace AuraDev
         /// Determines whether a reference format for RichString expressions is displayed in the Inspector,
         /// helping users understand how to reference the property in RichString syntax.
         /// </summary>
-        public bool showRichReferenceForm { get; set; } = true;
+        public RichReferenceDrawType richReferenceDraw { get; set; } = RichReferenceDrawType.DontDraw;
+
+        public enum RichReferenceDrawType
+        {
+            DontDraw,
+            Replace,
+            Append
+        }
     }
 #if UNITY_EDITOR
 
@@ -55,13 +62,29 @@ namespace AuraDev
         {
             var targetAttr = attribute as RichReferenceAttribute;
 
-            GUIContent richLabel = new GUIContent();
+            GUIContent richGui = new GUIContent();
             string actualPropertyName = Regex.Replace(property.name, @"^<(.+)>k__BackingField$", "$1");
 
-            string richRefForm = targetAttr.showRichReferenceForm ? $" (\"{actualPropertyName}\")" : string.Empty;
+            string richLabel = string.Empty;
 
-            richLabel.text = $"{property.displayName}{richRefForm}";
-            richLabel.tooltip = $"For referencing this into your RichString Expression, you have to use \"{actualPropertyName}\"";
+            switch (targetAttr.richReferenceDraw)
+            {
+                case RichReferenceAttribute.RichReferenceDrawType.DontDraw:
+                    richLabel = property.displayName;
+                    break;
+                case RichReferenceAttribute.RichReferenceDrawType.Replace:
+                    richLabel = actualPropertyName;
+                    break;
+                case RichReferenceAttribute.RichReferenceDrawType.Append:
+                    richLabel = $"{property.displayName} (\"{actualPropertyName}\")";
+                    break;
+                default:
+                    richLabel = property.displayName;
+                    break;
+            }
+
+            richGui.text = richLabel;
+            richGui.tooltip = $"For referencing this into your RichString Expression, you have to use \"{actualPropertyName}\"";
 
             if (targetAttr.showCopyButton)
             {
@@ -70,7 +93,7 @@ namespace AuraDev
                 Rect buttonRect = new Rect(position.x + position.width - 50, position.y, 50, 20);
 
                 // Draw the property field
-                EditorGUI.PropertyField(propertyRect, property, richLabel, true);
+                EditorGUI.PropertyField(propertyRect, property, richGui, true);
 
                 if (GUI.Button(buttonRect, "Copy"))
                 {
@@ -80,7 +103,7 @@ namespace AuraDev
             }
             else
             {
-                EditorGUI.PropertyField(position, property, richLabel, true);
+                EditorGUI.PropertyField(position, property, richGui, true);
             }
         }
     }
