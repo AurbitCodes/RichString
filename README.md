@@ -239,6 +239,10 @@ ublic class Weapon : IRichStringCustomFormat
  }
 ```
 
+## From the Author
+
+ This is my very first tool asset for Unity, and I am excited to share it with you! There may be some issues, and I appreciate your understanding as I work on improvements. Your feedback is invaluable to me, so please don’t hesitate to report any issues you encounter in the Issues section
+
 
 
  
