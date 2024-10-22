@@ -23,7 +23,7 @@ namespace AuraDev
         /// </summary>
         /// <param name="showCopyButton">Determines whether a copy button is displayed alongside the property in the Inspector,
         /// allowing easy copying of the reference.</param>
-        /// <param name="showRichReferenceForm">Determines whether a reference format for RichString expressions is displayed in the Inspector,
+        /// <param name="richReferenceDraw">Determines whether a reference format for RichString expressions is displayed in the Inspector,
         /// helping users understand how to reference the property in RichString syntax.</param>
         public RichReferenceAttribute(bool showCopyButton = true, RichReferenceDrawType richReferenceDraw = RichReferenceDrawType.DontDraw)
         {
@@ -53,7 +53,7 @@ namespace AuraDev
     }
 #if UNITY_EDITOR
 
-    [CustomPropertyDrawer(typeof(RichReferenceAttribute))]
+    [CustomPropertyDrawer(typeof(RichReferenceAttribute), true)]
     public class RichReferenceAttributeDrawer : PropertyDrawer
     {
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
