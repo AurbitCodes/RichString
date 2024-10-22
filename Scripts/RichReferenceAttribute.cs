@@ -43,12 +43,13 @@ namespace AuraDev
         /// </summary>
         public RichReferenceDrawType richReferenceDraw { get; set; } = RichReferenceDrawType.DontDraw;
 
-        public enum RichReferenceDrawType
-        {
-            DontDraw,
-            Replace,
-            Append
-        }
+        
+    }
+    public enum RichReferenceDrawType
+    {
+        DontDraw,
+        Replace,
+        Append
     }
 #if UNITY_EDITOR
 
@@ -69,13 +70,13 @@ namespace AuraDev
 
             switch (targetAttr.richReferenceDraw)
             {
-                case RichReferenceAttribute.RichReferenceDrawType.DontDraw:
+                case RichReferenceDrawType.DontDraw:
                     richLabel = property.displayName;
                     break;
-                case RichReferenceAttribute.RichReferenceDrawType.Replace:
+                case RichReferenceDrawType.Replace:
                     richLabel = actualPropertyName;
                     break;
-                case RichReferenceAttribute.RichReferenceDrawType.Append:
+                case RichReferenceDrawType.Append:
                     richLabel = $"{property.displayName} (\"{actualPropertyName}\")";
                     break;
                 default:
