@@ -107,12 +107,8 @@ namespace AuraDev
                 if (GUI.Button(buttonRect, "Copy"))
                 {
                     // Copy to clipboard and update button state
-                    string path = property.propertyPath
-                        .Replace("<", "")
-                        .Replace(">", "")
-                        .Replace("k__BackingField.", ".")
-                        .Replace("k__BackingField", "");
-                    GUIUtility.systemCopyBuffer = path;
+                    
+                    GUIUtility.systemCopyBuffer = GetCorrectPropertyPath(property.propertyPath);
                 }
             }
             else
@@ -123,10 +119,28 @@ namespace AuraDev
         
         private bool IsPropertyArray(SerializedProperty property)
         {
-            string[] variableNames = property.propertyPath.Split('.');
-            SerializedProperty p = property.serializedObject.FindProperty(variableNames[0]);
+            string variableName = property.propertyPath;
+            SerializedProperty p = property.serializedObject.FindProperty(variableName);
 
             return p.isArray;
+        }
+
+        private string GetCorrectPropertyPath(string propertyPath)
+        {
+            string cleanPath = propertyPath
+                        .Replace("<", "")
+                        .Replace(">", "")
+                        .Replace("k__BackingField.", ".")
+                        .Replace("k__BackingField", "");
+
+            if (propertyPath.Contains("Array"))
+            {
+                return Regex.Replace(cleanPath, @"\.Array\.data\[(\d+)\]", $"{RichString.sharedSettings.enumerableIndex}$1");
+            }
+            else
+            {
+                return cleanPath;
+            }
         }
     }
 #endif 

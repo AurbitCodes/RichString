@@ -610,8 +610,10 @@ MonoBehaviour:
     <Expression>k__BackingField: Your Main Weapon deals {mainWeapon.damage} damage.
   <MaxSlots>k__BackingField: 10
   <weapons>k__BackingField:
-  - <damage>k__BackingField: 25
-    <fireRate>k__BackingField: 10
+  - <damage>k__BackingField: 0
+    <fireRate>k__BackingField: 0
+  - <damage>k__BackingField: 0
+    <fireRate>k__BackingField: 0
   <mainWeapon>k__BackingField:
     <damage>k__BackingField: 15
     <fireRate>k__BackingField: 15
