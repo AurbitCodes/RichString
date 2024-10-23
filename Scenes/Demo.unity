@@ -612,27 +612,24 @@ MonoBehaviour:
       Your
       first weapon deals {weapons->0.damage} damage.
 
-      
 
       - Custom format
 
       Your
       main weapon | {mainWeapon}.
 
-      
 
       - Rich Text with Chaining
 
       [Notice::notice]:
       I am [Bold Green::green::b] and [Bold Italic Blue::blue::b::i].
 
-      
 
-      -
-      Nesting Property Reference and Rich Text
+      - Nesting
+      Property Reference and Rich Text
 
-      Your main weapon description
-      in [red::red]: [{mainWeapon}::red].'
+      Your main weapon description in [red::red]:
+      [{mainWeapon}::red].'
   <MaxSlots>k__BackingField: 10
   <weapons>k__BackingField:
   - <damage>k__BackingField: 25
