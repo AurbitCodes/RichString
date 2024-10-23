@@ -112,7 +112,7 @@ public class Inventory : MonoBehavior
 
  - **Formatting**
    
-   To apply formatting to the text, a colon `:` should be placed between the text and the formatting specifier within square brackets `[]`. The default formatting specifiers are as follows:
+   To apply formatting to the text, double colon `::` should be placed between the text and the formatting specifier within square brackets `[]`. The default formatting specifiers are as follows:
 
    Bold: `b`
 
@@ -131,7 +131,7 @@ public class Inventory : MonoBehavior
    These formatting specifiers also can be nested to create combinations:
 
    ```
-   I am [Bold and Italic!:b:i].
+   I am [Bold and Italic!::b::i].
    ```
 
    ![](Docs/Images/ex5.png)
@@ -139,7 +139,7 @@ public class Inventory : MonoBehavior
    A property can also be referenced as the text:
 
    ```
-   Your Main Weapon deals [{mainWeapon.damage}:b:u] damage.
+   Your Main Weapon deals [{mainWeapon.damage}::b::u] damage.
    ```
 
    ![](Docs/Images/ex6.png)
@@ -153,8 +153,8 @@ public class Inventory : MonoBehavior
    To apply a color, the color key should be placed as a formatting specifier within square brackets [], similar to how bold or italic formatting is applied.
 
    ```
-   I am [Green:green]!
-   I am [Green and Bold:green:b]!
+   I am [Green::green]!
+   I am [Green and Bold::green::b]!
    ```
 
    ![](Docs/Images/ex7a.png)
@@ -164,7 +164,7 @@ public class Inventory : MonoBehavior
 As with all other features in RichString, these formatting options can be seamlessly nested, allowing for powerful and flexible text manipulation.
 
 ```
-Your Main Weapon deals [{mainWeapon.damage}:b:u:red] damage.
+Your Main Weapon deals [{mainWeapon.damage}::b::u::red] damage.
 ```
 
 ![](Docs/Images/ex7b.png)
