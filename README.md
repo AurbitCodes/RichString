@@ -1,4 +1,4 @@
-![RichString](Docs/Images/RichStringBanner.png)
+![RichString](Docs/Images/richstring-banner.png)
 # RichString
  A dynamic, runtime string interpolation tool for Unity, supporting custom formatting and expressions.
  ## Features:
@@ -65,6 +65,9 @@ public class Inventory : MonoBehavior
  This section outlines the rules for crafting expressions using the powerful RichString system, which allows for seamless property referencing and rich text formatting. By following these guidelines, you can create dynamic strings that enhance the   interactivity and visual appeal of your content.
 
  While the specifiers shown here are the defaults, they can be customized to fit your needs via `RichStringSettings` in the asset folder.
+
+ ![](Docs/Images/richstringsettings.png)
+ 
 ## **Property Referencing**
  
  - **Property Reference**
@@ -269,7 +272,11 @@ ublic class Weapon : IRichStringCustomFormat
  }
 ```
 
+ ![](Docs/Images/ex9-inspector.png)
+
  For example, here the copy button on the Main Weapon property will copy `{mainWeapon}` and the one on the damage property will copy `{mainWeapon.damage}`.
+
+ ![](Docs/Images/ex10-inspector.png)
 
  For the `IEnumerable` types, the copy button on the Element 0 will copy `{weapons->0}` and the one on the damage property of the Element 0 will copy `{weapons->0.damage}`.
 
@@ -279,6 +286,8 @@ ublic class Weapon : IRichStringCustomFormat
 
 # Error Handling
  In the event of an error, you can specify whether it should be handled as a warning or an error in `RichStringSettings`. Handling it as an error may cause other parts of your code to stop functioning properly, so choose based on the severity of the issue. By default, errors are handled as warnings.
+
+ ![](Docs/Images/error-handling.png)
 
 ## From the Author
 
