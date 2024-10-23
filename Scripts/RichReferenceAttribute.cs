@@ -22,7 +22,7 @@ namespace AuraDev
         /// 
         /// </summary>
         /// <param name="showCopyButton">Determines whether a copy button is displayed alongside the property in the Inspector,
-        /// allowing easy copying of the reference.</param>
+        /// allowing easy copying of the reference's path.</param>
         /// <param name="richReferenceDraw">Determines whether a reference format for RichString expressions is displayed in the Inspector,
         /// helping users understand how to reference the property in RichString syntax.</param>
         public RichReferenceAttribute(bool showCopyButton = true, RichReferenceDrawType richReferenceDraw = RichReferenceDrawType.DontDraw)
@@ -33,7 +33,7 @@ namespace AuraDev
 
         /// <summary>
         /// Determines whether a copy button is displayed alongside the property in the Inspector,
-        /// allowing easy copying of the reference.
+        /// allowing easy copying of the reference's path.
         /// </summary>
         public bool showCopyButton { get; set; } = true;
 
@@ -107,7 +107,12 @@ namespace AuraDev
                 if (GUI.Button(buttonRect, "Copy"))
                 {
                     // Copy to clipboard and update button state
-                    GUIUtility.systemCopyBuffer = actualPropertyName;
+                    string path = property.propertyPath
+                        .Replace("<", "")
+                        .Replace(">", "")
+                        .Replace("k__BackingField.", ".")
+                        .Replace("k__BackingField", "");
+                    GUIUtility.systemCopyBuffer = path;
                 }
             }
             else
