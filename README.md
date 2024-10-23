@@ -178,6 +178,14 @@ These are all the rules to be followed in the current version, but more will be 
  }
  ```
 
+ - **Example:**
+
+ ```
+ Main Weapon
+ 
+ {mainWeapon}
+ ```
+
 # RichString Extensions
  The `RichStringExtensions` class provides a set of extension methods that can be utilized in code to apply rich text formatting easily. These methods enable developers to enhance the presentation of strings by incorporating various styles directly within their code.
 
@@ -193,7 +201,7 @@ text = text.Bold().Colorize(Color.green);
 
  The `RichReference` attribute contains two properties: `showCopyButton` and `richReferenceDraw`. When `showCopyButton` is enabled, a copy button is drawn that will copy the main property's path to the clipboard.
 
- The `richReferenceDraw` property is an enum of type `RichReferenceDrawType`, which includes the following options:
+ The `richReferenceDraw` property, which defaults to `RichReferenceDrawType.DontDraw`, is an enum of type `RichReferenceDrawType`, which includes the following options:
 
  - **DontDraw**: No elements are drawn.
  - **Replace**: The Unity display name is replaced with the main property name.
@@ -237,9 +245,9 @@ ublic class Weapon : IRichStringCustomFormat
  }
 ```
 
- For example, here the copy button on the Main Weapon property will copy `mainWeapon` and the one on the damage property will copy `mainWeapon.damage`.
+ For example, here the copy button on the Main Weapon property will copy `{mainWeapon}` and the one on the damage property will copy `{mainWeapon.damage}`.
 
- For the `IEnumerable` types, the copy button on the Element 0 will copy `weapons->0` and the one on the damage property of the Element 0 will copy `weapons->0.damage`.
+ For the `IEnumerable` types, the copy button on the Element 0 will copy `{weapons->0}` and the one on the damage property of the Element 0 will copy `{weapons->0.damage}`.
 
  They can be pasted right away in the `RichString`'s expression.
  
