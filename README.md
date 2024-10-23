@@ -201,7 +201,7 @@ text = text.Bold().Colorize(Color.green);
 
  The `RichReference` attribute contains two properties: `showCopyButton` and `richReferenceDraw`. When `showCopyButton` is enabled, a copy button is drawn that will copy the main property's path to the clipboard.
 
- The `richReferenceDraw` property is an enum of type `RichReferenceDrawType`, which includes the following options:
+ The `richReferenceDraw` property, which defaults to `RichReferenceDrawType.DontDraw`, is an enum of type `RichReferenceDrawType`, which includes the following options:
 
  - **DontDraw**: No elements are drawn.
  - **Replace**: The Unity display name is replaced with the main property name.
@@ -245,9 +245,9 @@ ublic class Weapon : IRichStringCustomFormat
  }
 ```
 
- For example, here the copy button on the Main Weapon property will copy `mainWeapon` and the one on the damage property will copy `mainWeapon.damage`.
+ For example, here the copy button on the Main Weapon property will copy `{mainWeapon}` and the one on the damage property will copy `{mainWeapon.damage}`.
 
- For the `IEnumerable` types, the copy button on the Element 0 will copy `weapons->0` and the one on the damage property of the Element 0 will copy `weapons->0.damage`.
+ For the `IEnumerable` types, the copy button on the Element 0 will copy `{weapons->0}` and the one on the damage property of the Element 0 will copy `{weapons->0.damage}`.
 
  They can be pasted right away in the `RichString`'s expression.
  
