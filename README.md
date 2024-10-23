@@ -198,8 +198,6 @@ text = text.Bold().Colorize(Color.green);
  - **DontDraw**: No elements are drawn.
  - **Replace**: The Unity display name is replaced with the main property name.
  - **Append**: The main property name is drawn in front of the Unity display name.
-
- > This feature is not currently supported for `IEnumerable` property types.
  ```csharp
 public class Inventory : MonoBehavior
 {
@@ -222,10 +220,6 @@ public class Inventory : MonoBehavior
     }
 }
  ```
-
- For example, here the copy button on the Main Weapon property will copy `mainWeapon` and the one on the damage property will copy `mainWeapon.damage`.
- 
-
  ```csharp
 ublic class Weapon : IRichStringCustomFormat
  {
@@ -242,6 +236,14 @@ ublic class Weapon : IRichStringCustomFormat
     }
  }
 ```
+
+ For example, here the copy button on the Main Weapon property will copy `mainWeapon` and the one on the damage property will copy `mainWeapon.damage`.
+
+ For the `IEnumerable` types, the copy button on the Element 0 will copy `weapons->0` and the one on the damage property of the Element 0 will copy `weapons->0.damage`.
+
+ They can be pasted right away in the `RichString`'s expression.
+ 
+
 
 # Error Handling
  In the event of an error, you can specify whether it should be handled as a warning or an error in `RichStringSettings`. Handling it as an error may cause other parts of your code to stop functioning properly, so choose based on the severity of the issue. By default, errors are handled as warnings.
