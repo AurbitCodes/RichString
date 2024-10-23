@@ -178,6 +178,14 @@ These are all the rules to be followed in the current version, but more will be 
  }
  ```
 
+ - **Example:**
+
+ ```
+ Main Weapon
+ 
+ {mainWeapon}
+ ```
+
 # RichString Extensions
  The `RichStringExtensions` class provides a set of extension methods that can be utilized in code to apply rich text formatting easily. These methods enable developers to enhance the presentation of strings by incorporating various styles directly within their code.
 
