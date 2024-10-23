@@ -75,6 +75,8 @@ public class Inventory : MonoBehavior
    Your Inventory has {MaxSlots} slots.  
    ```
 
+   ![](Docs/Images/ex1.png)
+
  - **Property in an Instance**
 
    To reference a property of a nested object, a dot `.` should be used to access the property, similar to regular code.
@@ -82,6 +84,8 @@ public class Inventory : MonoBehavior
    ```
    Your Main Weapon deals {mainWeapon.damage} damage.
    ```
+   ![](Docs/Images/ex2.png)
+   
    > It can be chained as many times as desired:
    > ```
    > {Instance1.Instance2.Instance3.Instance4.Instance5}
@@ -96,6 +100,10 @@ public class Inventory : MonoBehavior
    ```
    Your First Weapon deals {weapons->0.damage}
    ```
+
+   ![](Docs/Images/ex3-inspector.png)
+
+   ![](Docs/Images/ex3-runtime.png)
 
 ## Rich Text
 
@@ -114,21 +122,30 @@ public class Inventory : MonoBehavior
    ```
    I am [Bold:b].
    ```
+
+   ![](Docs/Images/ex4.png)
    
    These formatting specifiers also can be nested to create combinations:
 
    ```
    I am [Bold and Italic!:b:i].
    ```
+
+   ![](Docs/Images/ex5.png)
+
    A property can also be referenced as the text:
 
    ```
-   Your Main Weapon deals [{mainWeapon.damage}:b:u].
+   Your Main Weapon deals [{mainWeapon.damage}:b:u] damage.
    ```
+
+   ![](Docs/Images/ex6.png)
 
  - **Colorizing**
    
    To colorize a part of the text, first, the `Color Key`s must be declared in the `RichStringSettings` in the asset folder.
+
+   ![](Docs/Images/ex7a-richstringsettings.png)
 
    To apply a color, the color key should be placed as a formatting specifier within square brackets [], similar to how bold or italic formatting is applied.
 
@@ -136,13 +153,18 @@ public class Inventory : MonoBehavior
    I am [Green:green]!
    I am [Green and Bold:green:b]!
    ```
+
+   ![](Docs/Images/ex7a.png)
+
    > Using default Unity colors (like green, red etc.) is not supported in this version. For using them, they must be declared in `RichStringSettings`.
 
 As with all other features in RichString, these formatting options can be seamlessly nested, allowing for powerful and flexible text manipulation.
 
 ```
-Your Main Weapon deals [{mainWeapon.damage}:b:u:red].
+Your Main Weapon deals [{mainWeapon.damage}:b:u:red] damage.
 ```
+
+![](Docs/Images/ex7b.png)
 
 These are all the rules to be followed in the current version, but more will be added in future updates.
 
@@ -185,6 +207,8 @@ These are all the rules to be followed in the current version, but more will be 
  
  {mainWeapon}
  ```
+
+ ![](Docs/Images/ex8.png)
 
 # RichString Extensions
  The `RichStringExtensions` class provides a set of extension methods that can be utilized in code to apply rich text formatting easily. These methods enable developers to enhance the presentation of strings by incorporating various styles directly within their code.
