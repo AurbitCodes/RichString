@@ -61,14 +61,6 @@ namespace AuraDev
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            if (IsPropertyArray(property))
-            {
-                RichString.HandleError($"Using 'RichRefence' attribute on IEnumerable types is not currently supported. ({property.displayName})");
-
-                EditorGUI.PropertyField(position, property, label, true);
-                return;
-            }
-
             var targetAttr = attribute as RichReferenceAttribute;
 
             GUIContent richGui = new GUIContent();
