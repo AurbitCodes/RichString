@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0843387f85c69464f89ae0b0c5a6ab7e
+guid: d7f52ae1a17b5314584c9dc44a23da45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3193413089735684721
-    second: RichStringBanner_0
+      213: 6469487922808669274
+    second: richstring-card_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RichStringBanner_0
+      name: richstring-card_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 420
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f8dc83dd6b7bea3d0800000000000000
-      internalID: -3193413089735684721
+      spriteID: a54c0bd2dfc38c950800000000000000
+      internalID: 6469487922808669274
       vertices: []
       indices: 
       edges: []

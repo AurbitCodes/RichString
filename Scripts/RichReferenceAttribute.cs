@@ -11,7 +11,7 @@ using UnityEditor;
 
 namespace AuraDev
 {
-    [System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Property)]
+    [System.AttributeUsage(System.AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
     /// <summary>
     /// Attribute for drawing properties in the Unity Inspector with a custom label that displays the 
     /// original property name for runtime referencing within RichString expressions.
@@ -61,6 +61,14 @@ namespace AuraDev
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+            if (IsPropertyArray(property))
+            {
+                RichString.HandleError($"Using 'RichRefence' attribute on IEnumerable types is not currently supported. ({property.displayName})");
+
+                EditorGUI.PropertyField(position, property, label, true);
+                return;
+            }
+
             var targetAttr = attribute as RichReferenceAttribute;
 
             GUIContent richGui = new GUIContent();
@@ -106,6 +114,14 @@ namespace AuraDev
             {
                 EditorGUI.PropertyField(position, property, richGui, true);
             }
+        }
+        
+        private bool IsPropertyArray(SerializedProperty property)
+        {
+            string[] variableNames = property.propertyPath.Split('.');
+            SerializedProperty p = property.serializedObject.FindProperty(variableNames[0]);
+
+            return p.isArray;
         }
     }
 #endif 
