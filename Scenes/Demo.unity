@@ -607,13 +607,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textComp: {fileID: 0}
   <description>k__BackingField:
-    <Expression>k__BackingField: Your Main Weapon deals {mainWeapon.damage} damage.
+    <Expression>k__BackingField: '- Enumerating and property accessibility
+
+      Your
+      first weapon deals {weapons->0.damage} damage.
+
+      
+
+      - Custom format
+
+      Your
+      main weapon | {mainWeapon}.
+
+      
+
+      - Rich Text with Chaining
+
+      [Notice::notice]:
+      I am [Bold Green::green::b] and [Bold Italic Blue::blue::b::i].
+
+      
+
+      -
+      Nesting Property Reference and Rich Text
+
+      Your main weapon description
+      in [red::red]: [{mainWeapon}::red].'
   <MaxSlots>k__BackingField: 10
   <weapons>k__BackingField:
-  - <damage>k__BackingField: 0
-    <fireRate>k__BackingField: 0
-  - <damage>k__BackingField: 0
-    <fireRate>k__BackingField: 0
+  - <damage>k__BackingField: 25
+    <fireRate>k__BackingField: 15
   <mainWeapon>k__BackingField:
     <damage>k__BackingField: 15
     <fireRate>k__BackingField: 15
