@@ -191,7 +191,7 @@ text = text.Bold().Colorize(Color.green);
 # RichReference Attribute 
  When referencing a property, the property name used in code should be utilized (rather than Unity's display name in the inspector), and `RichReference` attribute facilitates easier access to it.
 
- The `RichReference` attribute contains two properties: `showCopyButton` and `richReferenceDraw`. When `showCopyButton` is enabled, a copy button is drawn that will copy the main property name (rather than the Unity's display name) to the clipboard.
+ The `RichReference` attribute contains two properties: `showCopyButton` and `richReferenceDraw`. When `showCopyButton` is enabled, a copy button is drawn that will copy the main property's path to the clipboard.
 
  The `richReferenceDraw` property is an enum of type `RichReferenceDrawType`, which includes the following options:
 
@@ -209,7 +209,7 @@ public class Inventory : MonoBehavior
     [field: SerializeField] public List<Weapon> weapons { get; private set; } = new();
     [field: SerializeField]
     [RichReference(richReferenceDraw = RichReferenceDrawType.Append)]
-    public DemoWeapon mainWeapon { get; private set; }
+    public Weapon mainWeapon { get; private set; }
 
     public void Start()
     {
@@ -222,6 +222,9 @@ public class Inventory : MonoBehavior
     }
 }
  ```
+
+ For example, here the copy button on the Main Weapon property will copy `mainWeapon` and the one on the damage will copy `mainWeapon.damage`.
+ 
 
  ```csharp
 ublic class Weapon : IRichStringCustomFormat
