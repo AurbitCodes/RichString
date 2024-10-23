@@ -223,7 +223,7 @@ public class Inventory : MonoBehavior
 }
  ```
 
- For example, here the copy button on the Main Weapon property will copy `mainWeapon` and the one on the damage will copy `mainWeapon.damage`.
+ For example, here the copy button on the Main Weapon property will copy `mainWeapon` and the one on the damage property will copy `mainWeapon.damage`.
  
 
  ```csharp
