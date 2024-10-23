@@ -125,14 +125,14 @@ namespace AuraDev
                         .Replace("k__BackingField.", ".")
                         .Replace("k__BackingField", "");
 
+            string result = cleanPath;
+
             if (propertyPath.Contains("Array"))
             {
-                return Regex.Replace(cleanPath, @"\.Array\.data\[(\d+)\]", $"{RichString.sharedSettings.enumerableIndex}$1");
+                result = Regex.Replace(cleanPath, @"\.Array\.data\[(\d+)\]", $"{RichString.sharedSettings.enumerableIndex}$1");
             }
-            else
-            {
-                return cleanPath;
-            }
+
+            return $"{{{result}}}";
         }
     }
 #endif 
