@@ -199,6 +199,7 @@ text = text.Bold().Colorize(Color.green);
  - **Replace**: The Unity display name is replaced with the main property name.
  - **Append**: The main property name is drawn in front of the Unity display name.
 
+ > This feature is not currently supported for `IEnumerable` property types.
  ```csharp
 public class Inventory : MonoBehavior
 {
@@ -238,6 +239,9 @@ ublic class Weapon : IRichStringCustomFormat
     }
  }
 ```
+
+# Error Handling
+ In the event of an error, you can specify whether it should be handled as a warning or an error in `RichStringSettings`. Handling it as an error may cause other parts of your code to stop functioning properly, so choose based on the severity of the issue. By default, errors are handled as warnings.
 
 ## From the Author
 
