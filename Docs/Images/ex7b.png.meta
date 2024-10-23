@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 46ef757b84a240c4e8f7fa70b42e28f4
+guid: 33cfd2ce24f98054e93a46fb1856c75a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5923137464885253096
-    second: ex7_0
+      213: 5024302479265102379
+    second: ex7b_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,7 +152,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ex7_0
+      name: ex7b_0
       rect:
         serializedVersion: 2
         x: 0
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 81ce4b99bd9cccda0800000000000000
-      internalID: -5923137464885253096
+      spriteID: b2af5b82c78e9b540800000000000000
+      internalID: 5024302479265102379
       vertices: []
       indices: 
       edges: []
