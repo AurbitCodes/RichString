@@ -8,7 +8,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 
 
-namespace AuraDev
+namespace RichString
 {
     [Serializable]
     public class RichString
