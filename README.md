@@ -123,7 +123,7 @@ public class Inventory : MonoBehavior
    Underline: `u`
 
    ```
-   I am [Bold:b].
+   I am [Bold::b].
    ```
 
    ![](Docs/Images/ex4.png)
