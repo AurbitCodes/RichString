@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace AuraDev
 {
-    [CreateAssetMenu(fileName = "RichString Settings", menuName = "RichString Settings")]
+    [CreateAssetMenu(fileName = "RichString/RichString Settings", menuName = "RichString Settings")]
     public class RichStringSettings : ScriptableObject
     {
         [field: Header("General Specifiers")]

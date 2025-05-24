@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ex3-inspector_0: -6619591520868398347
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

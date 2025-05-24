@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ex7a-richstringsettings_0: 6897292783744948113
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
