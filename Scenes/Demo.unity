@@ -610,33 +610,33 @@ MonoBehaviour:
     <Expression>k__BackingField: '- Enumerating and property accessibility
 
       Your
-      first weapon deals {weapons->0.damage} damage.
+      first weapon deals {weapons->0.damage} damage with fire rate of {weapons->0._fireRate}.
 
 
-      - Custom format
+      -
+      Custom format
+
+      Your main weapon | {mainWeapon}.
+
+
+      - Rich Text with
+      Chaining
+
+      [Notice::notice]: I am [Bold Green::green::b] and [Bold Italic
+      Blue::blue::b::i].
+
+
+      - Nesting Property Reference and Rich Text
 
       Your
-      main weapon | {mainWeapon}.
-
-
-      - Rich Text with Chaining
-
-      [Notice::notice]:
-      I am [Bold Green::green::b] and [Bold Italic Blue::blue::b::i].
-
-
-      - Nesting
-      Property Reference and Rich Text
-
-      Your main weapon description in [red::red]:
-      [{mainWeapon}::red].'
+      main weapon description in [red::red]: [{mainWeapon}::red].'
   <MaxSlots>k__BackingField: 10
   <weapons>k__BackingField:
   - <damage>k__BackingField: 25
-    <fireRate>k__BackingField: 15
+    _fireRate: 75
   <mainWeapon>k__BackingField:
     <damage>k__BackingField: 15
-    <fireRate>k__BackingField: 15
+    _fireRate: 60
 --- !u!4 &1369614523
 Transform:
   m_ObjectHideFlags: 0

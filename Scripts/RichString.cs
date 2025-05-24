@@ -187,7 +187,9 @@ namespace AuraDev
         // Gets the memeber info from the target type
         private MemberInfo GetMemberInfo(string reference, Type targetType)
         {
-            MemberInfo info = targetType.GetMember(reference).FirstOrDefault();
+            BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.GetProperty | BindingFlags.SetProperty
+                | BindingFlags.GetField | BindingFlags.SetField;
+            MemberInfo info = targetType.GetMember(reference, flags).FirstOrDefault();
 
             if (info == null) HandleError($"There is no member named {reference} in {targetType}");
 
