@@ -9,7 +9,7 @@ using UnityEngine.Windows;
 using UnityEditor;
 #endif
 
-namespace RichString
+namespace StringInterpolation
 {
     [System.AttributeUsage(System.AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
     /// <summary>

@@ -8,7 +8,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 
 
-namespace RichString
+namespace StringInterpolation
 {
     [Serializable]
     public class RichString

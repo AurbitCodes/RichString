@@ -6,7 +6,7 @@ using UnityEditor;
 #endif
 using UnityEngine;
 
-namespace RichString
+namespace StringInterpolation
 {
     [CreateAssetMenu(fileName = "RichString/RichString Settings", menuName = "RichString Settings")]
     public class RichStringSettings : ScriptableObject
