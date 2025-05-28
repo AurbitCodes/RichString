@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ParseStringToggle : MonoBehaviour
+namespace StringInterpolation.Demo
 {
-    [SerializeField] TextMeshProUGUI _textComp; 
-
-    private DemoInventory _demoDesc;
-    private void Start()
+    public class ParseStringToggle : MonoBehaviour
     {
-        _demoDesc = GetComponent<DemoInventory>();
+        [SerializeField] TextMeshProUGUI _textComp;
 
-        _demoDesc.description.Initialize(_demoDesc);
-        SwitchParsedString(true);
-    }
-    public void SwitchParsedString(bool parsed)
-    {
-        _textComp.text = parsed ? _demoDesc.description.GetParsedString() : _demoDesc.description.Expression;
-    }
+        private DemoInventory _demoDesc;
+        private void Start()
+        {
+            _demoDesc = GetComponent<DemoInventory>();
+
+            _demoDesc.description.Initialize(_demoDesc);
+            SwitchParsedString(true);
+        }
+        public void SwitchParsedString(bool parsed)
+        {
+            _textComp.text = parsed ? _demoDesc.description.GetParsedString() : _demoDesc.description.Expression;
+        }
+    } 
 }
