@@ -1,15 +1,15 @@
 {
-  "name": "com.auradev.richstring",
+  "name": "com.aurbitcodes.richstring",
   "displayName": "RichString",
   "description": "A dynamic, runtime string interpolation tool for Unity, supporting custom formatting and expressions.",
 
-  "version": "1.0.0",
+  "version": "1.1.4",
   "license": "MIT",
   "keywords": ["interpolation", "string", "text"],
-  "documentationUrl": "https://github.com/AAuraDev/RichString",
+  "documentationUrl": "https://github.com/AurbitCodes/RichString",
 
   "author": {
-    "name": "Aura",
-    "url": "https://github.com/AAuraDev"
+    "name": "Aurbit",
+    "url": "https://github.com/AurbitCodes"
   }
 }
