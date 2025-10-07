@@ -16,7 +16,7 @@
   "samples": [
     {
       "displayName": "Weapon Description",
-      "path": "Samples~/WeaponDescription"
+      "path": "Samples/WeaponDescription"
     }
   ]
 }
